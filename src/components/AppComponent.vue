@@ -8,8 +8,8 @@
         <ul>
             <li class="todo-item" v-for="(todo, index) in todos">
                 <p class="text">{{todo.text}}</p>
-                <button v-if="todo.completed" @click="compelete(index)" class="complete completed">Complete</button>
-                <button v-else @click="compelete(index)" class="complete">Complete</button>
+                <button v-if="todo.completed" @click="compeleteTodo(index)" class="complete completed">Complete</button>
+                <button v-else @click="compeleteTodo(index)" class="complete">Complete</button>
                 <button @click="deleteTodo(index)" class="delete">Delete</button>
             </li>
         </ul>
@@ -28,7 +28,8 @@
         };
         this.todos.push(todo);
       },
-      compelete(index) {
+      compeleteTodo(index) {
+        console.log(this.todos[index].completed);
         this.todos[index].completed = !this.todos[index].completed;
       },
       deleteTodo(index) {

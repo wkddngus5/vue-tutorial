@@ -57,9 +57,6 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html"
     }),
-    new MiniCssExtractPlugin({
-      filename: 'style.css'
-    }),
     new VueLoaderPlugin()
   ]
 };
